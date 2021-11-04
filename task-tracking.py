@@ -14,7 +14,8 @@ if action == str('e') or action == str('entry'):
     f = open("/home/garrypeffer/Python/task-tracking.md", "a")
     f.write("\n" + (entry) + "\n")
     f.close()
-#if action == str('f') or action == str('finish'):
+    
+if action == str('f') or action == str('finish'):
 if action == str('q') or action == str('quit'):
     print(str('Have a nice day!'))
     break
