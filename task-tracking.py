@@ -1,21 +1,36 @@
 import sys
-import os
+from os import system, name
+from time import sleep
 
-f = open("/home/garrypeffer/Python/task-tracking.md", "r")
-print(f.read())
+def clear():
 
-print(str('\nOptions: (e)ntry, (f)inish, (q)uit'))
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
 
-action = input("Enter option: \n\n")
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
 
+clear()
 
-if action == str('e') or action == str('entry'):
-    entry = input("Enter entry: \n")
-    f = open("/home/garrypeffer/Python/task-tracking.md", "a")
-    f.write("\n" + (entry) + "\n")
-    f.close()
-    
-if action == str('f') or action == str('finish'):
-if action == str('q') or action == str('quit'):
-    print(str('Have a nice day!'))
-    break
+# Opening message
+print(str('\nWelcome to your daily dose of organization!\n'))
+
+sleep(1)
+
+# Python3 code to iterate over a list
+list = [str('Walk the dog'), str('Wash the dishes'), str('Clean the garage'), str('Do the laundry'), str('Cook dinner')]
+
+# Using enumerate()
+for i, val in enumerate(list):
+    print (i, ",", val)
+
+# List out options for user input
+option = input(str('\nOptions:\n(n)ext, (d)one, (q)uit\n\n'))
+
+# Begin list of conditionals based on result of user input
+for i in list:
+    print(i[0], i[1], i[2])
+
+list.close()
