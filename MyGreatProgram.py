@@ -14,7 +14,7 @@ while True:
     for v in cur.execute("select * from tasks"):
         values += [(v[0], bool(v[1]), v[2])]
 
-    os.system("clear") # clears the terminal
+    os.system("clear") # Clears the terminal
 
     for i in range(len(values)):
         v = values[i]
@@ -56,10 +56,12 @@ while True:
                 break;
 
     elif userInput == "n" or userInput == "next":
-        #Skip completed tasks
+        # Skip completed tasks
         while True:
             current += 1
             current %= len(values)
 
             if not values[current][1]:
                 break;
+
+con.close()
